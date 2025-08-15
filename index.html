@@ -14,7 +14,7 @@
     header {
       background-color: #0077cc;
       color: white;
-      padding: 30px 20px;
+      padding: 20px;
       text-align: center;
     }
     header h1 {
@@ -24,6 +24,22 @@
     header p {
       margin: 5px 0 0;
       font-size: 1.2em;
+    }
+    .lang-switch {
+      margin-top: 10px;
+    }
+    .lang-switch button {
+      background-color: #005fa3;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin: 0 5px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    .lang-switch button:hover {
+      background-color: #004080;
     }
     nav {
       display: flex;
@@ -89,55 +105,119 @@
 <body>
 
   <header>
-    <h1>RobotFix</h1>
-    <p>Your Trusted Robot Repair Experts</p>
+    <h1 id="title">RobotFix</h1>
+    <p id="subtitle">Your Trusted Robot Repair Experts</p>
+    <div class="lang-switch">
+      <button onclick="setLanguage('en')">English</button>
+      <button onclick="setLanguage('nl')">Nederlands</button>
+    </div>
   </header>
 
   <nav>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#services" id="nav-services">Services</a>
+    <a href="#about" id="nav-about">About</a>
+    <a href="#contact" id="nav-contact">Contact</a>
   </nav>
 
   <section class="hero">
-    <h2>Repairing All Types of Robot Devices</h2>
-    <p>From household helpers to industrial bots, we diagnose, repair, and optimize your robots with care and precision. Fast, reliable, and professional service for every device.</p>
+    <h2 id="hero-title">Repairing All Types of Robot Devices</h2>
+    <p id="hero-text">From household helpers to industrial bots, we diagnose, repair, and optimize your robots with care and precision.</p>
   </section>
 
   <section id="services" class="services">
     <div class="service-card">
-      <h3>Diagnostics & Troubleshooting</h3>
-      <p>We quickly identify issues in any robot device, from software bugs to hardware malfunctions.</p>
+      <h3 id="s1-title">Diagnostics & Troubleshooting</h3>
+      <p id="s1-text">We quickly identify issues in any robot device, from software bugs to hardware malfunctions.</p>
     </div>
     <div class="service-card">
-      <h3>Hardware Repairs</h3>
-      <p>Broken arms, sensors, wheels, or circuits? We replace and repair components efficiently.</p>
+      <h3 id="s2-title">Hardware Repairs</h3>
+      <p id="s2-text">Broken arms, sensors, wheels, or circuits? We replace and repair components efficiently.</p>
     </div>
     <div class="service-card">
-      <h3>Software & Firmware Updates</h3>
-      <p>Keep your robot running at peak performance with the latest updates and custom configurations.</p>
+      <h3 id="s3-title">Software & Firmware Updates</h3>
+      <p id="s3-text">Keep your robot running at peak performance with the latest updates and custom configurations.</p>
     </div>
     <div class="service-card">
-      <h3>Maintenance & Optimization</h3>
-      <p>Regular checkups to extend the life of your devices and improve their functionality.</p>
+      <h3 id="s4-title">Maintenance & Optimization</h3>
+      <p id="s4-text">Regular checkups to extend the life of your devices and improve their functionality.</p>
     </div>
   </section>
 
   <section id="about" style="padding:50px 20px; text-align:center;">
-    <h2>About RobotFix</h2>
-    <p>RobotFix is dedicated to providing fast, professional, and reliable repair services for all types of robotic devices. Our certified technicians combine technical expertise with a passion for robotics to ensure every repair meets the highest standards.</p>
+    <h2 id="about-title">About RobotFix</h2>
+    <p id="about-text">RobotFix is dedicated to providing fast, professional, and reliable repair services for all types of robotic devices. Our certified technicians combine technical expertise with a passion for robotics to ensure every repair meets the highest standards.</p>
   </section>
 
   <section id="contact" style="padding:50px 20px; text-align:center; background-color:#e8f0f8;">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:info@robotfix.be">info@robotfix.be</a></p>
-    <p>Phone: +32 123 456 789</p>
-    <p>Address: RobotFix HQ, Merelbeke, Belgium</p>
+    <h2 id="contact-title">Contact Us</h2>
+    <p id="contact-email">Email: <a href="mailto:info@robotfix.be">info@robotfix.be</a></p>
+    <p id="contact-phone">Phone: +32 123 456 789</p>
+    <p id="contact-address">Address: RobotFix HQ, Merelbeke, Belgium</p>
   </section>
 
   <footer>
     &copy; 2025 RobotFix. All rights reserved.
   </footer>
+
+  <script>
+    const translations = {
+      en: {
+        title: "RobotFix",
+        subtitle: "Your Trusted Robot Repair Experts",
+        "nav-services": "Services",
+        "nav-about": "About",
+        "nav-contact": "Contact",
+        "hero-title": "Repairing All Types of Robot Devices",
+        "hero-text": "From household helpers to industrial bots, we diagnose, repair, and optimize your robots with care and precision.",
+        "s1-title": "Diagnostics & Troubleshooting",
+        "s1-text": "We quickly identify issues in any robot device, from software bugs to hardware malfunctions.",
+        "s2-title": "Hardware Repairs",
+        "s2-text": "Broken arms, sensors, wheels, or circuits? We replace and repair components efficiently.",
+        "s3-title": "Software & Firmware Updates",
+        "s3-text": "Keep your robot running at peak performance with the latest updates and custom configurations.",
+        "s4-title": "Maintenance & Optimization",
+        "s4-text": "Regular checkups to extend the life of your devices and improve their functionality.",
+        "about-title": "About RobotFix",
+        "about-text": "RobotFix is dedicated to providing fast, professional, and reliable repair services for all types of robotic devices. Our certified technicians combine technical expertise with a passion for robotics to ensure every repair meets the highest standards.",
+        "contact-title": "Contact Us",
+        "contact-email": "Email: <a href='mailto:info@robotfix.be'>info@robotfix.be</a>",
+        "contact-phone": "Phone: +32 123 456 789",
+        "contact-address": "Address: RobotFix HQ, Merelbeke, Belgium"
+      },
+      nl: {
+        title: "RobotFix",
+        subtitle: "Uw Vertrouwde Robot Reparatie Experts",
+        "nav-services": "Diensten",
+        "nav-about": "Over ons",
+        "nav-contact": "Contact",
+        "hero-title": "Reparatie van Alle Soorten Robotapparaten",
+        "hero-text": "Van huishoudelijke helpers tot industriële robots, wij diagnosticeren, repareren en optimaliseren uw robots met zorg en precisie.",
+        "s1-title": "Diagnose & Probleemoplossing",
+        "s1-text": "Wij identificeren snel problemen bij elk robotapparaat, van softwarefouten tot hardwarestoringen.",
+        "s2-title": "Hardware Reparaties",
+        "s2-text": "Gebroken armen, sensoren, wielen of circuits? Wij vervangen en repareren onderdelen efficiënt.",
+        "s3-title": "Software & Firmware Updates",
+        "s3-text": "Houd uw robot op topniveau met de nieuwste updates en aangepaste configuraties.",
+        "s4-title": "Onderhoud & Optimalisatie",
+        "s4-text": "Regelmatige controles om de levensduur van uw apparaten te verlengen en hun functionaliteit te verbeteren.",
+        "about-title": "Over RobotFix",
+        "about-text": "RobotFix biedt snelle, professionele en betrouwbare reparatiediensten voor alle soorten robotapparaten. Onze gecertificeerde technici combineren technische expertise met passie voor robotica om ervoor te zorgen dat elke reparatie aan de hoogste normen voldoet.",
+        "contact-title": "Contacteer Ons",
+        "contact-email": "Email: <a href='mailto:info@robotfix.be'>info@robotfix.be</a>",
+        "contact-phone": "Telefoon: +32 123 456 789",
+        "contact-address": "Adres: RobotFix HQ, Merelbeke, België"
+      }
+    };
+
+    function setLanguage(lang) {
+      for (let id in translations[lang]) {
+        document.getElementById(id).innerHTML = translations[lang][id];
+      }
+    }
+
+    // Default language
+    setLanguage('en');
+  </script>
 
 </body>
 </html>
