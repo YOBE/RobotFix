@@ -59,8 +59,15 @@
     .hero {
       text-align: center;
       padding: 60px 20px;
-      background: url('https://raw.githubusercontent.com/YOBE/RobotFix/main/robot%20mower%20humanoid.jpg') center/cover no-repeat, #0077cc;
+      background: 
+        url('https://raw.githubusercontent.com/YOBE/RobotFix/main/robotmowerhumanoid1.jpg') left center / 33.33% auto no-repeat,
+        url('https://raw.githubusercontent.com/YOBE/RobotFix/main/robotmowerhumanoid2.jpg') center center / 33.33% auto no-repeat,
+        url('https://raw.githubusercontent.com/YOBE/RobotFix/main/robotmowerhumanoid3.jpg') right center / 33.33% auto no-repeat,
+        #0077cc; /* Fallback color */
       color: white;
+      min-height: 300px; /* Ensure visibility */
+      background-size: 33.33% auto, 33.33% auto, 33.33% auto; /* Equal width for each image */
+      background-position: left center, center center, right center;
     }
     .hero h2 {
       font-size: 2em;
@@ -72,6 +79,19 @@
       max-width: 700px;
       margin: 0 auto;
       text-shadow: 1px 1px 3px #000;
+    }
+    /* Responsive design for smaller screens */
+    @media (max-width: 768px) {
+      .hero {
+        background-size: 25% auto, 25% auto, 25% auto; /* Smaller images on mobile */
+      }
+    }
+    @media (max-width: 480px) {
+      .hero {
+        background: 
+          url('https://raw.githubusercontent.com/YOBE/RobotFix/main/robot%20mower%20humanoid.jpg') center center / 80% auto no-repeat,
+          #0077cc; /* Show only one image on very small screens */
+      }
     }
     .services {
       display: flex;
@@ -103,14 +123,12 @@
   </style>
 </head>
 <body>
-
   <header>
     <h1 id="title">RobotFix</h1>
     <p id="subtitle">Your Trusted Robot Repair Experts</p>
     <div class="lang-switch">
       <button onclick="setLanguage('nl')">Nederlands</button>
       <button onclick="setLanguage('en')">English</button>
-      
     </div>
   </header>
 
@@ -202,7 +220,7 @@
         "s4-title": "Onderhoud & Optimalisatie",
         "s4-text": "Regelmatige controles om de levensduur van uw apparaten te verlengen en hun functionaliteit te verbeteren.",
         "about-title": "Over RobotFix",
-        "about-text": "RobotFix is onstaan uit een hobby voor robots. We bieden snelle, professionele en betrouwbare reparatiediensten voor alle soorten robotapparaten. Als ingenieur Elektronica/Automatisatie met passie voor robotica zorgen we dat elke reparatie aan de hoogste normen voldoet.",
+        "about-text": "RobotFix is ontstaan uit een hobby voor robots. We bieden snelle, professionele en betrouwbare reparatiediensten voor alle soorten robotapparaten. Als ingenieur Elektronica/Automatisatie met passie voor robotica zorgen we dat elke reparatie aan de hoogste normen voldoet.",
         "contact-title": "Contacteer Ons",
         "contact-email": "Email: <a href='mailto:yorick.beun@gmail.com'>yorick.beun@gmail.com</a>",
         "contact-phone": "Telefoon: +32 471 614303",
@@ -219,6 +237,5 @@
     // Default language
     setLanguage('nl');
   </script>
-
 </body>
 </html>
